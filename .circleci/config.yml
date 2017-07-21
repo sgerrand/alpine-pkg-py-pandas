@@ -15,7 +15,8 @@ jobs:
       - run:
           name: Build packages
           command: |
-            docker run --volumes-from input --volumes-from output sgerrand/alpine-abuild:3.8
+            docker run --env RSA_PRIVATE_KEY="$RSA_PRIVATE_KEY" --env RSA_PRIVATE_KEY_NAME="sgerrand.rsa" \
+                       --volumes-from input --volumes-from output sgerrand/alpine-abuild:3.8
       - run:
           name: Extract packages
           command: |
