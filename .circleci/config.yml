@@ -20,7 +20,9 @@ jobs:
       - run:
           name: Test installing packages
           command: |
-            docker run --volumes-from output alpine:3.8 sh -c "apk add --no-progress --update-cache --upgrade /packages/builder/x86_64/*.apk"
+            wget https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+            docker cp sgerrand.rsa.pub output:/packages/
+            docker run --volumes-from output alpine:3.8 sh -c "cp /packages/sgerrand.rsa.pub /etc/apk/keys/ && apk add --no-progress --update-cache --upgrade /packages/builder/x86_64/*.apk"
       - run:
           name: Extract packages
           command: |
