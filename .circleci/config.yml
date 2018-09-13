@@ -9,13 +9,13 @@ jobs:
       - run:
           name: Create Docker volumes
           command: |
-            docker create --name input --volume /home/builder/package alpine:3.6 /bin/true
-            docker create --name output --volume /packages alpine:3.6 /bin/true
+            docker create --name input --volume /home/builder/package alpine:3.8 /bin/true
+            docker create --name output --volume /packages alpine:3.8 /bin/true
             docker cp ./APKBUILD input:/home/builder/package
       - run:
           name: Build packages
           command: |
-            docker run --volumes-from input --volumes-from output sgerrand/alpine-abuild:chown
+            docker run --volumes-from input --volumes-from output sgerrand/alpine-abuild:3.8
       - run:
           name: Extract packages
           command: |
