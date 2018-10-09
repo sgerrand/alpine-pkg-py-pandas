@@ -33,6 +33,7 @@ jobs:
           command: |
             docker rm input
             docker rm output
+          when: always
       - store_artifacts:
           destination: pkgs
           path: packages
