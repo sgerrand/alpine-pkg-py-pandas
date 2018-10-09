@@ -2,9 +2,9 @@
 # Maintainer: Sasha Gerrand <alpine-pkgs@sgerrand.com>
 pkgname=py-pandas
 _pkgname=pandas
-pkgver=0.20.3
+pkgver=0.23.4
 pkgrel=0
-pkgdesc="Powerful data structures for data analysis, time series,and statistics"
+pkgdesc="Powerful data structures for data analysis, time series, and statistics"
 url="http://pandas.pydata.org/"
 arch="noarch"
 license="BSD"
@@ -47,4 +47,4 @@ _py3() {
 	_py python3
 }
 
-sha512sums="891c7e04d075f96fadf3775e903472e279eaeaa4509eb0da81a74261a3ed86ff309de0b5a2c100ee93dd968fed1df6d7e426ca78785b2b36785fe7679218fdc5  pandas-0.20.3.tar.gz"
+sha512sums="0c89db820a49e0cfb9764e64589ff9af819f9a53c01bd0254cd1b6dbd1e9fd452b2ff7c7330ede7623c7576589113e831a19a57c735562b55f90506df15805b9  pandas-0.23.4.tar.gz"
