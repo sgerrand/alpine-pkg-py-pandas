@@ -6,7 +6,7 @@ pkgver=0.20.3
 pkgrel=0
 pkgdesc="Powerful data structures for data analysis, time series,and statistics"
 url="http://pandas.pydata.org/"
-arch="all"
+arch="noarch"
 license="BSD"
 depends="python py-dateutil py-numpy py-tz"
 makedepends="linux-headers py-numpy-dev py-setuptools python2-dev python3-dev"
@@ -29,6 +29,7 @@ _py() {
 	local python="$1"
 	pkgdesc="$pkgdesc ${python#python}"
 	depends="$depends $python"
+	subpkgarch="all"
 	install_if="$pkgname=$pkgver-r$pkgrel $python"
 
 	cd "$builddir"
