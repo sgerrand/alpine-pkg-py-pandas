@@ -14,6 +14,6 @@ download links.
 The current installation method for these packages is to install them with `apk`:
 
     wget --quiet --output-document=/etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-    apk add --no-cache --repository=https://apkproxy.herokuapp.com/sgerrand/alpine-pkg-py-pandas py-pandas=0.20.3-r0
+    apk add --no-cache --repository=https://apkproxy.herokuapp.com/sgerrand/alpine-pkg-py-pandas py-pandas=0.23.4-r0
 
 [pandas]: https://pandas.pydata.org/
