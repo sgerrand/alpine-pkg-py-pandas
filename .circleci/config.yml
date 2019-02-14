@@ -13,20 +13,20 @@ jobs:
       - run:
           name: Create Docker volumes
           command: |
-            docker create --name input --volume /home/builder/package alpine:3.8 /bin/true
-            docker create --name output --volume /packages alpine:3.8 /bin/true
+            docker create --name input --volume /home/builder/package alpine:3.9 /bin/true
+            docker create --name output --volume /packages alpine:3.9 /bin/true
             docker cp . input:/home/builder/package/
       - run:
           name: Build packages
           command: |
             docker run --env RSA_PRIVATE_KEY="$RSA_PRIVATE_KEY" --env RSA_PRIVATE_KEY_NAME="sgerrand.rsa" \
-                       --volumes-from input --volumes-from output sgerrand/alpine-abuild:3.8
+                       --volumes-from input --volumes-from output sgerrand/alpine-abuild:3.9
       - run:
           name: Test installing packages
           command: |
             wget https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
             docker cp sgerrand.rsa.pub output:/packages/
-            docker run --volumes-from output alpine:3.8 sh -c "cp /packages/sgerrand.rsa.pub /etc/apk/keys/ && apk add --no-progress --update-cache --upgrade /packages/builder/x86_64/*.apk"
+            docker run --volumes-from output alpine:3.9 sh -c "cp /packages/sgerrand.rsa.pub /etc/apk/keys/ && apk add --no-progress --update-cache --upgrade /packages/builder/x86_64/*.apk"
       - run:
           name: Extract packages
           command: |
