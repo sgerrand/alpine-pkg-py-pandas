@@ -1,19 +1,13 @@
 # alpine-pkg-py-pandas
 
-[![CircleCI](https://circleci.com/gh/sgerrand/alpine-pkg-py-pandas/tree/master.svg?style=svg)](https://circleci.com/gh/sgerrand/alpine-pkg-py-pandas/tree/master)
+:warning: **Deprecated** :warning:
 
-This is the Python [pandas][pandas] package as an Alpine Linux package.
+[As of 2020-07-09](https://github.com/alpinelinux/aports/commit/616f76b81c34951f87ff13a05faeb009c9d93860),
+the `py3-pandas` package can and should be downloaded and installed from Alpine Linux's community repository.
 
-## Releases
+---
 
-See the [releases page](https://github.com/sgerrand/alpine-pkg-py-pandas/releases) for the latest
-download links.
+This was [pandas][pandas] packaged for [Alpine Linux][alpine-linux].
 
-## Installing
-
-The current installation method for these packages is to install them with `apk`:
-
-    wget --quiet --output-document=/etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-    apk add --no-cache --repository=https://apkproxy.herokuapp.com/sgerrand/alpine-pkg-py-pandas py-pandas=0.23.4-r0
-
+[alpine-linux]: https://www.alpinelinux.org
 [pandas]: https://pandas.pydata.org/
